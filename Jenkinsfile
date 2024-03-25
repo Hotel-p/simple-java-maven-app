@@ -19,6 +19,11 @@ pipeline {
                 }
             }
         }
+        stage('Run') {
+            steps {
+                sh 'java -cp target/classes com.mycompany.app.App'
+            }
+        }
         stage('Deliver') { 
             steps {
                 sh './jenkins/scripts/deliver.sh' 
